@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form with All Languages</title>
+    <style>
+        body {
+            color: antiquewhite;
+            background-image: url("https://wallpapers.com/images/featured/3d-car-pictures-h706rbre4lzn83ot.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: auto;
+            font-family: Arial, sans-serif;
+        }
+
+        div {
+            margin-left: auto;
+            font-size: xx-large;
+            display: flex;
+            flex-direction: column;
+            border-radius: 40px;
+        }
+
+        .order {
+            display: block;
+            margin: 10px;
+        }
+
+        input {
+            width: 300px;
+            height: 40px;
+            border: 3px solid rgb(19, 141, 66);
+            border-radius: 40px;
+            font-size: medium;
+            padding-left: 10px;
+        }
+
+        button {
+            width: 150px;
+            height: 40px;
+            background-color: blue;
+            border: 3px solid rgb(216, 33, 33);
+            border-radius: 40px;
+            font-size: medium;
+            margin-top: 20px;
+            cursor: pointer;
+            color: white;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        /* Language dropdown styling */
+        .lang-select {
+            margin-top: 20px;
+            width: 250px;
+            height: 40px;
+            font-size: medium;
+            border-radius: 20px;
+            border: 2px solid #fff;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #2e86de;
+            color: white;
+        }
+
+        /* Hide Google Translate’s default UI and header */
+        .goog-logo-link,
+        .goog-te-gadget span,
+        .goog-te-banner-frame,
+        #goog-gt-tt,
+        .goog-te-balloon-frame {
+            display: none !important;
+        }
+
+        body {
+            top: 0 !important;
+        }
+
+        #google_translate_element {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div> Login Form
+        <form>
+            <label for="na" class="order">Name</label>
+            <input type="text" id="na" placeholder="Enter Your Name" class="order">
+
+            <label for="nu" class="order">Number</label>
+            <input type="number" id="nu" placeholder="Enter your Number" class="order">
+
+            <label for="em" class="order">Email</label>
+            <input type="email" id="em" placeholder="Enter Email" class="order">
+
+            <label for="pa" class="order">Password</label>
+            <input type="password" id="pa" placeholder="Enter Password" class="order">
+
+            <button type="submit" class="order">Login</button>
+        </form>
+
+        <!-- Language Selector -->
+        <select id="language" class="lang-select" onchange="changeLanguage()">
+            <option value="">🌐 Select Language</option>
+        </select>
+
+        <!-- Google Translate Widget (Hidden) -->
+        <div id="google_translate_element"></div>
+    </div>
+
+    <!-- Google Translate API -->
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        // Google Translate Initialization
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                autoDisplay: false
+            }, 'google_translate_element');
+
+            // Fill custom dropdown with all Google Translate-supported languages
+            const langSelect = document.getElementById("language");
+            const selectField = document.querySelector(".goog-te-combo");
+
+            // Wait for Google Translate dropdown to load
+            setTimeout(() => {
+                if (selectField) {
+                    for (let i = 0; i < selectField.options.length; i++) {
+                        const option = document.createElement("option");
+                        option.value = selectField.options[i].value;
+                        option.text = selectField.options[i].text;
+                        langSelect.appendChild(option);
+                    }
+                }
+            }, 1500);
+        }
+
+        // Trigger translation when user selects a language
+        function changeLanguage() {
+            const selectField = document.querySelector(".goog-te-combo");
+            const language = document.getElementById("language").value;
+
+            if (language && selectField) {
+                selectField.value = language;
+                selectField.dispatchEvent(new Event("change"));
+            }
+        }
+    </script>
+</body>
+</html>

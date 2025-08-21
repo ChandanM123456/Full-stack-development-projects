@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: red;
+        }
+
+        .Main1 {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .Main1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sub11 {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .sub11 img {
+            width: 300px;
+            height: auto;
+            border: 2px solid black;
+        }
+        .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .title {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      font-size: 60px;
+      color: red;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      width: 60px;
+      height: auto;
+    }
+    </style>
+</head>
+<body>
+    <div class="Main1">
+        <div class="container">
+    <div class="title">BUGATTI</div>
+        <img src= car.png  alt="Main Image" id="Main1_Image">
+    
+       </div>
+  </div>
+</body>
+</html>

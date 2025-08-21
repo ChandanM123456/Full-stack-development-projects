@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="setData()">
+        <input type = "text" id = "name" placeholder="name">
+        <br>
+        <input type ="submit" id = "submit">
+    </form>
+    <button onclick="deleteData()">Clear</button>
+</body>
+<script>
+    function setData(){
+    let username = document.getElementById("name").value;
+    localStorage.setItem("User Name" , username);
+    }
+    function deleteData(){
+        localStorage.clear();
+    }
+</script>
+</html>

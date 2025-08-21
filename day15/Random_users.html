@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random User Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #user img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+    }
+    #user h1 {
+      font-size: 24px;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+    <h1> Random Users Generator</h1>
+
+  <div id="user">
+    <!-- User data will appear here -->
+  </div>
+
+  <button onclick="fetchData()">Get User</button>
+
+  <script>
+    let userContainer = document.getElementById('user');
+
+    async function fetchData() {
+      try {
+        let response = await fetch('https://randomuser.me/api/');
+        let data = await response.json();
+        let userData = data.results[0];
+
+        let name = `${userData.name.title} ${userData.name.first} ${userData.name.last}`;
+        let image = userData.picture.large;
+
+        userContainer.innerHTML = `
+          <img src="${image}" alt="User Image">
+          <h1>${name}</h1>
+        `;
+      } catch (error) {
+        console.error(error);
+        userContainer.innerHTML = `<p>Failed to load user data. Please try again.</p>`;
+      }
+    }
+  </script>
+
+</body>
+</html>

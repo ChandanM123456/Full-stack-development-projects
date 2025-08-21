@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bugatti Veyron</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: blue;
+    }
+
+    body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background-image: src = "car.png";
+      background-size: cover;
+      background-position: center;
+    }
+
+    .title {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      font-size: 48px;
+      color: red;
+      font-weight: bold;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      width: 60px;
+      height: auto;
+    }
+
+    .sidebar {
+      position: absolute;
+      top: 100px;
+      left: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: red;
+    }
+
+    .footer-text {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 40px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .footer-text span {
+      color: red;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">BUGATTI</div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Bugatti_logo.svg/512px-Bugatti_logo.svg.png" alt="Bugatti Logo" class="logo" />
+
+    <div class="sidebar">
+      <a href="#">Home</a>
+      <a href="#">Bookings</a>
+      <a href="#">Models</a>
+      <a href="#">Racing</a>
+      <a href="#">About</a>
+    </div>
+
+    <div class="footer-text">
+      Bugatti <span>Veyron</span>
+       <img src= car.png  alt="Main Image" id="Main1_Image">
+    
+    </div>
+
+    </div>
+  </div>
+</body>
+</html>

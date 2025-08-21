@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .Main {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(8, 65, 121);
+        }
+        .Sub1 {
+            position: absolute;
+            top: 10vh;
+            left: 20vw;
+            width: 70vw;
+            height: 80vh;
+            background-color: rgb(18, 165, 206);
+            border-radius: 40px 10px 40px 0px;
+        }
+        .Sub2, .Sub4 {
+            position: absolute;
+            left: 35vw;
+            top: 20vh;
+            width: 30vw;
+            height: 50vh;
+            background-color: rgb(17, 13, 232);
+            border-radius: 40px 10px 40px 0px;
+            font-size: x-large;
+            padding-left: 20px;
+            color: aliceblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .Sub4 {
+            display: none; /* Initially hidden */
+        }
+        .Sub3 {
+            position: absolute;
+            right: 35vw;
+            top: 0.5vh;
+            width: 30vw;
+            height: 50vh;
+            background-color: rgb(58, 56, 62);
+            border-radius: 40px 10px 40px 0px;
+            color: white;
+            text-align: center;
+            padding-top: 20px;
+        }
+        img {
+            width: 90%;
+            height: 90%;
+            border-radius: 80px 20px 80px 20px;
+            margin-left: 5%;
+        }
+        button {
+            width: 180px;
+            height: 50px;
+            background-color: aqua;
+            font-size: larger;
+            border-radius: 20px 5px 20px 5px;
+            color: aliceblue;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="Main">
+        <div class="Sub1">
+
+            <!-- First Box -->
+            <div class="Sub2" id="subBox">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.EBXc9eJ1YRFLtkNI_djaAwHaDz" alt="">
+            </div>
+
+            <!-- Text Box -->
+            <div class="Sub3" id="Sub3">
+                <h1 id="heading1">CHANDAN M</h1>
+                <h2 id="heading2">DEVOPS ENGINEER</h2>
+                <h3 id="heading3">Full Stack Developer</h3>
+                <button onclick="changeContent()">Explore</button>
+            </div>
+
+            <!-- Second Box (Hidden Initially) -->
+            <div class="Sub4" id="Sub4">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.VCbE-c4XnCMCX8Pw__GFxgHaD4" alt="">
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function changeContent(){
+            document.getElementById("heading1").innerHTML = "Fresher" ;
+            document.getElementById("heading2").innerHTML = "Placed in Microsoft";
+            document.getElementById("heading3").innerHTML = "MERN Developer";
+
+            document.getElementById("Sub3").style.display = "none";
+            document.getElementById("Sub4").style.display = "flex";
+        }
+    </script>
+</body>
+</html>

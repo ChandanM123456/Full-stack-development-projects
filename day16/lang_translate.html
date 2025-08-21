@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Translate Demo</title>
+</head>
+<body>
+    <div class="main">
+        <p>
+            Necessitatibus omnis dolore quia rem, voluptatem, cum eveniet neque officiis harum temporibus labore!
+        </p>
+        <p id="demo"></p>
+    </div>
+
+    <!-- Google Translate API -->
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en'
+                },
+                'demo'
+            );
+        }
+    </script>
+</body>
+</html>

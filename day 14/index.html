@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card</title>
+</head>
+<body>
+    <script>
+        class IDModel{
+            constructor(username, userage, userrollno){
+                this.Name = username;
+                this.Age = userage;
+                this.Roll = userrollno;
+
+            }
+            printId(){
+                document.writeln(`Name is ${this.Name} <br> age is ${this.Age} <br> the roll no is ${this.Roll}`)
+            }
+        }
+        let ChandanID = new IDModel("Chandan", 21, "1KG22CB010");
+        ChandanID.printId();
+    </script>
+</body>
+</html>

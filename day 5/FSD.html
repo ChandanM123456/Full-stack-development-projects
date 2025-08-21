@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Novi Tech - CSS Positioning & MERN</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0b0b3b;
+      color: rgb(122, 212, 43);
+    }
+
+    header {
+      padding: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-start;
+      gap: 30px;
+      padding-left: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: orange;
+    }
+
+    .main-section {
+      text-align: center;
+      padding-top: 80px;
+      padding-bottom: 50px;
+    }
+
+    .main-section h1 {
+      font-size: 48px;
+      color: #c21616;
+    }
+
+    .mern-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .mern-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mern-stack img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      background-color: rgb(229, 28, 119);
+      border-radius: 50%;
+      padding: 10px;
+    }
+
+    .letter {
+      margin-top: 10px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #adff2f;
+    }
+
+    /* Positioning Section */
+    .position-section {
+      background-color: rgb(163, 156, 21);
+      color: red;
+      padding: 40px;
+      text-align: left;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .position-section h2 {
+      text-align: center;
+      color: orangered;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 40px;
+    }
+
+    .brand-logo img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .brand-logo p {
+      font-size: 16px;
+      text-align: right;
+    }
+
+    .tagline {
+      font-style: italic;
+      font-size: 14px;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Explore</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Banner -->
+  <main class="main-section">
+    <h1>Novi Tech</h1>
+    <div class="mern-container">
+      <div class="mern-stack">
+        <img src="https://upload.wikimedia.org/wikipedia/en/4/45/MongoDB-Logo.png" alt="MongoDB">
+        <span class="letter">M</span>
+      </div>
+      <div class="mern-stack">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" alt="Express">
+        <span class="letter">E</span>
+      </div>
+      <div class="mern-stack">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.png" alt="React">
+        <span class="letter">R</span>
+      </div>
+      <div class="mern-stack">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.png" alt="Node.js">
+        <span class="letter">N</span>
+      </div>
+    </div>
+  </main>
+
+  
+  
